@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ <style>
+   html{
+    background:  rgba(169, 169, 181, 0.151) 100%;
+  }
+  
+
+  header {
+  background: linear-gradient(
+    to bottom,
+    rgb(155, 155, 167) 0%,
+    rgba(155, 155, 167, 0.879) 39%,
+    rgba(155, 155, 167, 0.868) 40%,
+    rgba(155, 155, 167, 0.728) 56%,
+    rgba(155, 155, 167, 0.731) 60%,
+
+    rgba(155, 155, 167, 0.452)  80%,
+    rgba(155, 155, 167, 0.432)  81%,
+    rgba(155, 155, 167, 0.237)  90%,
+    rgba(155, 155, 167, 0.199) 91%,
+    rgba(169, 169, 181, 0.178) 95%,
+    rgba(169, 169, 181, 0.121) 98%,
+    rgba(169, 169, 181, 0.048) 100%
+  );
+}
+footer {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      height: 10vh;
+      margin: auto auto;
+      background: linear-gradient( to bottom, rgba(169, 169, 181, 0.048) 0%, rgba(169, 169, 181, 0.121) 39%, rgba(169, 169, 181, 0.178) 40%, rgba(155, 155, 167, 0.199) 56%, rgba(155, 155, 167, 0.237) 60%, rgba(155, 155, 167, 0.432) 80%, rgba(155, 155, 167, 0.452) 81%, rgba(155, 155, 167, 0.731) 90%, rgba(155, 155, 167, 0.728)91%, rgba(155, 155, 167, 0.868)95%, rgba(155, 155, 167, 0.879)98%, rgb(155, 155, 167) 100% );
+  
+  }
+
+
+.copyright {
+	position: relative;
+	width: 420px;
+	margin: 0 auto;
+	text-align: center;
+	color: rgba(155, 155, 167, 0.868);
+	line-height: 30px;
+  }
+  
+ .copyright a {
+	color: rgba(155, 155, 167, 0.452);
+  }
+  
+ .copyright a:hover {
+	color: #5773a4;
+  }
+ /*cont*/
+ 
+.flex-container {
+  display: flex;
+  width: 770px;
+  margin: 5px auto;
+  padding: 3rem 2rem;
+  align-items: flex-start;
+  gap: 3px;
+  border: 0px solid;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.ima .imgHouse {
+  width: 150px;
+}
+.flex-container .imo-container {
+  display: flex;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  border-radius: 3%;
+}
+
+.flex-container .imo-container .ima {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f7f7f7;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid #ccc;
+  outline-offset: -1.5rem;
+  cursor: pointer;
+  width: 160px;
+  height: 160px;
+  border-radius: 2%;
+}
+
+.flex-container .imo-container .ima:hover {
+  outline: 0.1rem solid #333436;
+  outline-offset: 0;
+  border-radius: 3%;
+}
+
+.flex-container .imo-container .ima img {
+  height: 5rem;
+}
+
+.flex-container .imo-container .ima:hover img {
+  transform: scale(0.9);
+}
+
+.flex-container .imo-container .ima h3 {
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+  color:rgba(89, 119, 130, 0.836);
+  text-align: left;
+  text-shadow: 0.1em 0.1em 0.1em silver;
+}
+.flex-container .imo-container .ima:hover h3 {
+  color:rgb(23, 9, 74);
+}
+
+.flex-container .imo-container .textstyle {
+  font-size: 15px;
+  text-align: center;
+}
+span{
+  color: rgb(23, 9, 74);
+  font-size: large;
+  text-shadow: 2px 1px 3px #0000004e;
+}
+legend{
+  color: rgb(23, 9, 74);
+  font-size: 25px;
+  text-shadow: 2px 1px 3px #0000004e;
+}
+
+.editCon{
+  display: flex;
+  border-style:solid;
+  border-color:rgba(132, 132, 132, 0.9) ;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.word{
+  font-size: X-large;
+  color:rgb(23, 9, 74); ;
+}
+
+.logO{
+  float: right;
+	color: #143ba8;
+	text-decoration: none;
+}
+
+h1{
+    color:  rgb(51, 51, 68);
+}
+a{
+  color: #143ba8;
+    text-decoration: none;
+}
+
+.topnav {
+    background-color: linear-gradient( to bottom, rgb(155, 155, 167) 0%, rgba(155, 155, 167, 0.879) 39%, rgba(155, 155, 167, 0.868) 40%, rgba(155, 155, 167, 0.728) 56%, rgba(155, 155, 167, 0.731) 60%, rgba(155, 155, 167, 0.452) 80%, rgba(155, 155, 167, 0.432) 81%, rgba(155, 155, 167, 0.237) 90%, rgba(155, 155, 167, 0.199) 91%, rgba(169, 169, 181, 0.178) 95%, rgba(169, 169, 181, 0.121) 98%, rgba(169, 169, 181, 0.048) 100% ); 
+    overflow: hidden;
+  
+  }
+  
+  
+  .topnav a {
+    float: right;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  
+  .topnav a.active {
+    background-color: #002244;
+    color: white;
+  }
+
+  .uplo:hover{
+    color: rgb(183, 28, 146);
+  }
+
+  .delet:hover{
+    color: rgb(183, 28, 146);
+  }
+  .topnav .heCol a{
+Color:  #002244;;
+}
+ </style>
+
+    <title>Housing Any Where | EditProperty</title>
+    </head>
+    <body>
+      <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo" width= "150px" /> 
+        </div>
+            <div class="topnav">
+                <a class="active" href="index.html">Log Out</a>
+                 <div class="heCol">
+                  <a  href="PropertyDetailsPage.html".html">Property deatils </a>
+                
+                  </div>
+            </div>
+        
+    </header>
+    <h1>Comfy Homes</h1>
+     <main>
+        <form
+          action="PropertyDetailsPage.html"
+          method="post"
+          id="formP"
+          name="myForm"
+        >
+
+        <fieldset class="Property">
+        <legend>Property Information</legend>
+           <br/>
+            <label><span>Property Name:</span></label>
+            <input
+              type="text"
+              id="Pname"
+              name="Name"
+              placeholder="Comfy Homes"
+            />
+            <br /><br />
+
+            <label for="category"><span>Category:</span></label> 
+            <input type="text" id="category" name="pcategory" placeholder="villa" />
+            <br /><br />
+
+
+            <label for="nor"><span>Number Of Rooms:</span></label>
+            <input type="number" id="nor" name="nors" placeholder="6"/>
+            <br /><br />
+
+            <label for="prent"><span>Rent:</span></label> 
+            <input type="text" id="prent" name="rent" placeholder="5000/month"/>
+            <br /><br />
+
+            <label for="add"><span>Location:</span></label>
+            <input type="text" id="add" name="plocation" placeholder="Riyadh, almalqa District"/>
+            <br /><br />
+
+            <label for="mnot"><span>Max Number Of Tenants:</span></label> 
+            <input type="number" id="mnot" name="Pmnot" placeholder="2"/>
+            <br /><br /> 
+
+            <label for="des"><span>Description:</span></label> <br />
+            <textarea id="des"  name="entry" rows="6" cols="64">It has three floors: the basment, the ground floar and the first floor.</textarea>
+
+            <br /><br />    
+          </fieldset> 
+        </form>
+        <br />
+        <div class="editCon">
+          <Span class="word">Properity images:</Span>
+          <br>
+          <div class="upl">
+            <br><br>
+          <span>[</span>  <a href="Editpropertypage.html" class="uplo">Upload images</a> <span>]</span>
+          </div>
+         <div class="flex-container">
+            <div class="imo-container">
+              <div class="ima" data-name="b1">
+                <img
+                  src="images/out.jpg"
+                  alt="HouseDetails"
+                  class="imgHouse"
+                />
+                <h3>House front</h3>
+                <br><br>
+                <a href="Editpropertypage.html" class="delet">Delete</a>
+              </div>
+    
+              <div class="ima" data-name="b2">
+                
+                <img
+                  src="images/in.jpg"
+                  alt="HouseDetails"
+                  class="imgHouse"
+                />
+                  <h3>Ground floor</h3>
+                  <br><br>
+                  <a href="Editpropertypage.html" class="delet">Delete</a>
+              </div>
+    
+              <div class="ima" data-name="b3">
+              
+                <img
+                 src="images/beh.jpg"
+                  alt="HouseDetails"
+                  class="imgHouse"
+                />
+                 <h3>Backyard</h3>
+                 <br><br>
+                 <a href="Editpropertypage.html" class="delet">Delete</a>
+              </div>
+
+          
+            </div>
+         </div>
+         <br>
+        </div>
+        <br><br>
+      
+        
+          <button onclick="window.location.href='PropertyDetailsPage.html'">Save</button>
+      </main>
+      <br /><br />
+   
+
+  
+    <footer>
+      <p class="copyright">Copyright &copy; 2023 <a href="index.html">Housing Anywhere</a> All rights reserved.
+      </p>
+  </footer>
+
+  </body>
+</html>

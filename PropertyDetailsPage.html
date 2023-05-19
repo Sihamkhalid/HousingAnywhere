@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ <style>
+  html{
+    background:  rgba(169, 169, 181, 0.151) 100%;
+  }
+  
+  header {
+  background: linear-gradient(
+    to bottom,
+    rgb(155, 155, 167) 0%,
+    rgba(155, 155, 167, 0.879) 39%,
+    rgba(155, 155, 167, 0.868) 40%,
+    rgba(155, 155, 167, 0.728) 56%,
+    rgba(155, 155, 167, 0.731) 60%,
+
+    rgba(155, 155, 167, 0.452)  80%,
+    rgba(155, 155, 167, 0.432)  81%,
+    rgba(155, 155, 167, 0.237)  90%,
+    rgba(155, 155, 167, 0.199) 91%,
+    rgba(169, 169, 181, 0.178) 95%,
+    rgba(169, 169, 181, 0.121) 98%,
+    rgba(169, 169, 181, 0.048) 100%
+  );
+}
+footer {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      height: 10vh;
+      margin: auto auto;
+      background: linear-gradient( to bottom, rgba(169, 169, 181, 0.048) 0%, rgba(169, 169, 181, 0.121) 39%, rgba(169, 169, 181, 0.178) 40%, rgba(155, 155, 167, 0.199) 56%, rgba(155, 155, 167, 0.237) 60%, rgba(155, 155, 167, 0.432) 80%, rgba(155, 155, 167, 0.452) 81%, rgba(155, 155, 167, 0.731) 90%, rgba(155, 155, 167, 0.728)91%, rgba(155, 155, 167, 0.868)95%, rgba(155, 155, 167, 0.879)98%, rgb(155, 155, 167) 100% );
+  
+  }
+.copyright {
+	position: relative;
+	width: 420px;
+	margin: 0 auto;
+	text-align: center;
+	color: rgba(155, 155, 167, 0.868);
+	line-height: 30px;
+  }
+  
+ .copyright a {
+	color: rgba(155, 155, 167, 0.452);
+  }
+  
+ .copyright a:hover {
+	color: #5773a4;
+  }
+.all{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    align-items:  center;
+    justify-content: space-evenly;
+    position: absolute;
+    top:140%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    /*background-color: white;*/
+    overflow: hidden;
+    height: 100%;
+    width:100%;
+}
+
+.Img1{
+    height: 40%;
+    width: 30%;
+    background-image: url("images/out.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1s;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.35);
+    perspective: 200px;
+   
+}
+.Img1:hover .one{
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+.one{
+   position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(44, 43, 70, 0.7);
+    height: 86.2%;
+    width: 91%;
+   text-align: center;
+   padding: 20px;
+   transform-origin: top center;
+   transform: rotateX(-125deg);
+   opacity: 0;
+   transition: 1s;
+}
+.one h1{
+    color: rgb(211, 190, 171);
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+/*img2*/
+.Img2{
+    height: 40%;
+    width: 30%;
+    background-image: url("images/ins.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    perspective: 200px;
+    transition: 1s;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.35);
+   
+}
+.two{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(44, 43, 70, 0.7);
+    height: 86.2%;
+    width: 91%;
+   text-align: center;
+   padding: 20px;
+   transform-origin: top center;
+   transform: rotateX(-125deg);
+   opacity: 0;
+   transition: 1s;
+}
+
+.Img2:hover .two{
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+.two h1{
+    color: rgb(211, 190, 171);
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+
+/*3*/
+.Img3{
+    height: 40%;
+    width: 30%;
+    background-image: url("images/beh.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1s;
+    border-radius: 10px;
+    perspective: 200px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.35);
+  
+}
+.three{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(44, 43, 70, 0.7);
+    height: 86.2%;
+    width: 91%;
+   text-align: center;
+   padding: 20px;
+   transform-origin: top center;
+   transform: rotateX(-125deg);
+   opacity: 0;
+   transition: 1s;
+}
+
+.Img3:hover .three{
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+.three h1{
+    color: rgb(211, 190, 171);
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+
+p em{
+color: rgb(23, 9, 74);
+font-size: larger;
+text-shadow: 2px 1px 3px #0000004e;
+}
+
+p{
+   
+    text-shadow: 2px 1px 3px #2b21124e;
+    color:rgb(71, 113, 130);
+    font-size: 110%;
+}
+
+.colorA{
+   color: rgb(100, 134, 146);
+   text-decoration: none;
+}
+.prop .check a:hover {
+    color: rgb(183, 28, 146);
+}
+.prop a {
+    text-decoration: none;
+}
+a .prop {
+    color: rgb(100, 134, 146);
+    text-decoration: none;
+}
+
+h1{
+    color:  rgb(51, 51, 68);
+}
+
+h3{
+   width: 35%;
+   background-image: url("images/gb.jpg");
+   border-radius: 6px;
+   text-align: center;
+   color: rgb(30, 30, 54);
+   text-transform: uppercase;
+   color: #374255;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.logO{
+    float: right;
+	color: #143ba8;
+	text-decoration: none;
+
+}
+
+.topnav {
+    background-color: linear-gradient( to bottom, rgb(155, 155, 167) 0%, rgba(155, 155, 167, 0.879) 39%, rgba(155, 155, 167, 0.868) 40%, rgba(155, 155, 167, 0.728) 56%, rgba(155, 155, 167, 0.731) 60%, rgba(155, 155, 167, 0.452) 80%, rgba(155, 155, 167, 0.432) 81%, rgba(155, 155, 167, 0.237) 90%, rgba(155, 155, 167, 0.199) 91%, rgba(169, 169, 181, 0.178) 95%, rgba(169, 169, 181, 0.121) 98%, rgba(169, 169, 181, 0.048) 100% ); 
+    overflow: hidden;
+  
+  }
+  
+  .topnav a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #002244;
+    color: white;
+  }
+  .topnav .heCol a{
+Color:  #002244;;
+}
+ </style>
+    <title>Housing Any Where | PropertyDetails</title>
+   
+</head>
+<body>
+    <div class="prop">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" width= "150px" /> 
+            </div>
+                <div class="topnav">
+                    <a class="active" href="index.html">Log Out</a>
+                     <div class="heCol">
+                     <a href="javascript:history.back()">Previous Page</a>
+                      </div>
+                </div>
+            
+        </header>
+    <h1>Comfy Homes</h1>
+    <div class="check">
+    [ <a class="colorA" href="PropertyDetailsPage.html">Apply</a> | <a class="colorA" href="Editpropertypage.html">Edit</a> ]
+   
+</div>
+ <main>
+      <h3> Property Information</h3>
+      <div class="Proinfo">
+    <ul>
+      <li><p> <em>Property Name:</em> Comfy Homes </p> </li>
+      <li><p> <em>Category:</em> Villa </p> </li>
+      <li><p> <em>Number Of Rooms:</em> 6 </p></li>
+      <li><p> <em>Rent:</em> 150000/month </p></li>
+      <li><p> <em>Location:</em> Riyadh, almalqa District </p></li>
+      <li><p> <em>Number Of Rooms:</em> 6 </p></li>
+      <li><p> <em>Max Number Of Tenants:</em> 2 </p> </li>
+      <li><p> <em>Description:</em> It has three floors: the basment, the ground floar and the first floor. </p> </li>
+    </ul>
+ </div>
+
+ <br>
+  <h3>property image</h3>
+
+ <div class="all">
+    <div class="container">
+        <div class="Img1">
+            <div class="one">
+                <h1>House front</h1>
+            </div>
+        </div>
+        <div class="Img2">
+                <div class="two">
+                    <h1>Ground floor</h1>
+                </div>
+        </div>  
+        
+        <div class="Img3">
+            <div class="three">
+                <h1>Backyard</h1>
+            </div>
+        </div> 
+    </div>
+   </div>
+      </main>
+
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br>
+ <footer>
+    <p class="copyright">Copyright &copy; 2023 <a href="index.html">Housing Anywhere</a> All rights reserved.
+    </p>
+ 
+  </footer>
+</div>
+  </body>
+</html>

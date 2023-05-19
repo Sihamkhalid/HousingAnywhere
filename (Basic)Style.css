@@ -1,0 +1,333 @@
+#logo img {
+	width: 150px;
+}
+
+
+html{
+    background:  rgba(169, 169, 181, 0.151) 100%;
+  } 
+  
+  header {
+      background: linear-gradient( to bottom, rgb(155, 155, 167) 0%, rgba(155, 155, 167, 0.879) 39%, rgba(155, 155, 167, 0.868) 40%, rgba(155, 155, 167, 0.728) 56%, rgba(155, 155, 167, 0.731) 60%, rgba(155, 155, 167, 0.452) 80%, rgba(155, 155, 167, 0.432) 81%, rgba(155, 155, 167, 0.237) 90%, rgba(155, 155, 167, 0.199) 91%, rgba(169, 169, 181, 0.178) 95%, rgba(169, 169, 181, 0.121) 98%, rgba(169, 169, 181, 0.048) 100% ); 
+  }
+  
+  .copyright {
+      position: relative;
+      width: 420px;
+      margin: 0 auto;
+      text-align: center;
+      color: rgba(155, 155, 167, 0.868);
+      line-height: 30px;
+    }
+    
+   .copyright a {
+      color: rgba(155, 155, 167, 0.452);
+    }
+    
+   .copyright a:hover {
+      color: #5773a4;
+    }
+  
+  footer {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      height: 10vh;
+      margin: auto auto;
+      background: linear-gradient( to bottom, rgba(169, 169, 181, 0.048) 0%, rgba(169, 169, 181, 0.121) 39%, rgba(169, 169, 181, 0.178) 40%, rgba(155, 155, 167, 0.199) 56%, rgba(155, 155, 167, 0.237) 60%, rgba(155, 155, 167, 0.432) 80%, rgba(155, 155, 167, 0.452) 81%, rgba(155, 155, 167, 0.731) 90%, rgba(155, 155, 167, 0.728)91%, rgba(155, 155, 167, 0.868)95%, rgba(155, 155, 167, 0.879)98%, rgb(155, 155, 167) 100% );
+  
+  }
+  
+  .topnav {
+    background-color: linear-gradient( to bottom, rgb(155, 155, 167) 0%, rgba(155, 155, 167, 0.879) 39%, rgba(155, 155, 167, 0.868) 40%, rgba(155, 155, 167, 0.728) 56%, rgba(155, 155, 167, 0.731) 60%, rgba(155, 155, 167, 0.452) 80%, rgba(155, 155, 167, 0.432) 81%, rgba(155, 155, 167, 0.237) 90%, rgba(155, 155, 167, 0.199) 91%, rgba(169, 169, 181, 0.178) 95%, rgba(169, 169, 181, 0.121) 98%, rgba(169, 169, 181, 0.048) 100% ); 
+    overflow: hidden;
+  
+  }
+  
+  
+  .topnav a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #002244;
+    color: white;
+  }
+  
+  a {
+      color: #143ba8;
+      text-decoration: none;
+  }
+  .topnav .heCol a{
+    Color:  #002244;;
+    }
+  
+ /* h2 { 
+    width:35% ;
+    background-image:url("images/Background.jpeg");
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 auto;
+  }*/
+  
+  
+  /* This is for any title in the page */
+  /*.title {
+      padding-bottom: 2em;
+      text-transform: uppercase;
+      color: #374255;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+
+ 
+
+  
+
+
+
+
+  /*homeowner page*/
+.homeowner table {
+    flex:1;
+    width: 90% ;
+    border-radius: 10px;
+    background-color: #EFF0F1;
+    border: 1px solid #999;
+    margin: auto auto;
+	padding: 30px;
+  }
+
+
+
+  .homeowner h1 {
+	color: #002244;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30pt;
+}
+
+.homeowner table, th, td {
+	padding: 20px;
+	border:1px solid ;
+	border-color: #455a64 ;
+	text-align: center;
+	margin: 0 auto;
+}
+.homeowner td {
+	color: #455a64;
+	background-color: rgb(228, 228, 232);
+}
+
+.homeowner th {
+	color: white;
+	background-color: #002244;
+}
+
+
+.homeowner .add {
+    float: right;
+    padding: 7px 130px;
+    font-size: 20px;
+}
+
+
+
+.homeowner h3 {
+	width: 35%;
+	background-image: url("images/Textbg.jpg");
+	border-radius: 6px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+	text-transform: uppercase;
+	color: #374255;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+/* body{
+	margin: 0;
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	backdrop-filter: grayscale(80%);
+	padding: 20px;
+	
+}*/
+
+
+.homeowner pre {
+	text-shadow: 2px 1px 3px;
+	color: rgb(71, 113, 130);
+	font-size: 18px;
+	text-align: center;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	bottom: 10%;
+	opacity: 0.8;
+	/*
+	border-radius: 10px;
+	background-color: rgb(228, 228, 232);
+	border: 1px solid;
+		*/
+}
+
+.homeseeker h2 { 
+    width:35% ;
+    background-image:url("Background.jpeg");
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  
+  .homeseeker pre .em {
+      text-shadow: 2px 1px 3px;
+      color: #002244;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .homeseeker pre {
+      text-shadow: 2px 1px 3px;
+      color: rgb(71, 113, 130);
+      font-size: 18px;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .homeseeker h1 {
+      color: #002244;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 30pt;
+  }
+  
+  .homeseeker h2 { 
+    width:35% ;
+    background-image:url("images/Background.jpeg");
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 auto;
+
+  }
+  
+  /* This is for any title in the page */
+  .homeseeker .title {
+      padding-bottom: 2em;
+      text-transform: uppercase;
+      color: #374255;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  
+  
+  .homeseeker table {
+    flex:1;
+    width: 90% ;
+    border-radius: 10px;
+    background-color: #EFF0F1;
+    border: 1px solid #999;
+    margin: auto auto;
+  padding: 30px;
+  
+  } 
+  
+  .homeseeker table {	 border-radius: 25px; }
+  .homeseeker table, th, td {
+      padding: 20px;
+      border:1px solid ;
+    font-size:20px;
+      text-align: center;
+      margin: 0 auto;
+    border: 1px solid rgb(71, 113, 130); ;
+  }
+  td {	color: #002244; background-color: white;}
+  th { color: #002244; background-color: #607d8b; opacity: 0.9; }
+  
+   
+    
+  .homeseeker .hover-underline {
+      display: inline-block;
+      position: relative;
+      color: #0087ca;
+    }
+    
+    .homeseeker .hover-underline::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0087ca;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    
+    .homeseeker .hover-underline:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .homeseeker .sort {
+      float:right;
+      padding: 7px 130px;
+      font-size: 20px;
+  }
+  
+   .homeseeker .sort select {
+      border: 1px solid rgb(71, 113, 130); ;
+      border-radius: 20px;
+      padding: 8px;
+      padding-right: 40px;
+      margin-top: 5px;
+  
+  }
+  
+  
+  .homeseeker #info { 
+    font-size: 25px;
+  }
+  
+  
+  /*p { 
+    text-shadow: 2px 1px 3px ;
+     color :rgb(71, 113, 130); 
+     font-size: 18px;
+     text-align: center;
+  }*/
+  
+  .homeseeker div {
+      display: block;
+  }
+  
+  .homeseeker #Welcome {
+    color:#002244;
+  }
+  .homeseeker h1 {
+    text-align: center;
+    font-size: 30pt;
+  
+  }
+  
+  .homeowner .addP:hover{
+    color: rgb(183, 28, 146);
+	}
+  

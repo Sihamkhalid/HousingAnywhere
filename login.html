@@ -1,0 +1,73 @@
+<!DOCTYPE >
+<html>
+<head>
+	<title>Housing Any Where | Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+	<header id="headerLogo">
+		<div id="logo">
+			<img src ="images/logo.png" alt ="logo" >
+		</div>
+
+	</header>
+
+	<div id="content">
+		<section style="text-align: center;">
+			<header class="title">
+				<h2>Login</h2>
+			</header>
+		</section>
+
+		<form id="login_form" action="homecontent.html" method="POST">
+			<div class="form-row">
+				<div class="input-group">
+					<label for="email">Email *</label>
+					<input type="email" class="form-control" id="email" name="email" value="" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="input-group">
+					<label for="password">Password *</label>
+					<input type="password" class="form-control" id="password" name="password" value="" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="input-group">
+					<label for="type">Type *</label>
+					<select class="form-control" id="type" name="type" required>
+						<option value="HomeSeeker">Home Seeker</option>
+						<option value="Homeowner">Homeowner</option>
+					</select>
+				</div>
+			</div>
+			<input class="button" id="login" type="submit" value="login" onclick="goTo(); return false;">
+			<div style="width:10%; margin:auto auto;">
+				<a href="signup.html">Sign up</a> </div>
+
+		</form>
+	</div>
+
+	<footer>
+		<p class="copyright">Copyright &copy; 2023 <a href="index.html">Housing Anywhere</a> All rights reserved.
+		</p>
+	</footer>
+<script>
+function goTo(){
+             type = document.getElementById("type").value;
+             console.log(type);
+             if(type==="HomeSeeker")
+             {
+                   location.replace("Homeseekerpage.html");
+             }
+             else
+             {
+                location.replace("Homeowner.html");  
+             }
+             }
+</script>	
+</body>
+</html>

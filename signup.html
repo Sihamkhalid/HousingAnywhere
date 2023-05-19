@@ -1,0 +1,94 @@
+<!DOCTYPE >
+<html>
+<head>
+	<title>Housing Any Where | Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+
+	<header id="headerLogo">
+		<div id="logo">
+			<img src ="images/logo.png" alt ="logo" >
+		</div>
+	</header>
+
+	<div id="content">
+		<section style="text-align: center;">
+			<header class="title">
+				<h2>Signup</h2>
+			</header>
+		</section>
+		
+		<form name="signup_form" action="login.html" method="POST">
+			<div class="form-row">
+				<div class="input-group">
+					<label for="firstname">First Name *</label>
+					<input type="text" class="form-control" id="firstname" name="firstname" required>
+				</div>
+				<div class="input-group">
+					<label for="lastname">Last Name *</label>
+					<input type="text" class="form-control" id="lastname" name="lastname" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="input-group">
+					<label for="age">Age *</label>
+					<input type="number" class="form-control" id="age" name="age" required>
+				</div>
+				<div class="input-group">
+					<label for="familymembers">Number of the family members *</label>
+					<input type="number" class="form-control" id="familymembers" name="familymembers" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="input-group">
+					<label for="income">Income *</label>
+					<input type="number" class="form-control" id="income" name="income" required>
+				</div>
+				<div class="input-group">
+					<label for="job">Job *</label>
+					<input type="text" class="form-control" id="job" name="job" required>
+				</div>
+			</div>
+
+
+			<div class="form-row">
+				<div class="input-group">
+					<label for="phonenumber">Phone Number *</label>
+					<input type="tel" class="form-control" id="phonenumber" name="phonenumber" required>
+				</div>
+			</div>
+		
+			<div class="form-row">
+				<div class="input-group">
+					<label for="email">Email *</label>
+					<input type="email" class="form-control" id="email" name="email" value="" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="input-group">
+					<label for="password">Password *</label>
+					<input type="password" class="form-control" id="password" name="password" value="" required>
+				</div>
+				<div class="input-group">
+					<label for="confirm_password">Confirm Password*</label>
+					<input type="password" class="form-control" id="confirm_password" name="confirm_password" value="" required>
+				</div>
+			</div>
+			<a href="login.html" ></a><input class="button" id="signup" type="submit" value="sign-up" ></a>
+			
+			<div style="width:10%; margin:auto auto;">
+				<a href="login.html" >Login</a> </div>
+
+
+		</form>
+	</div>
+
+	<footer>
+		<p class="copyright">Copyright &copy; 2023 <a href="index.html">Housing Anywhere</a> All rights reserved.
+		</p>
+	</footer>
+</body>
+</html>
