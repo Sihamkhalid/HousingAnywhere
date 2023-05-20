@@ -6,7 +6,7 @@
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Any Where | Homeseeker</title>
+    <title>Housing Any Where | Homeseeker </title>
 	    <link rel="stylesheet" href="(Basic)Style.css">
         
 </head>
@@ -149,3 +149,4 @@
 </body 
 </div>
 </html>
+
