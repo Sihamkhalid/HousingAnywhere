@@ -1,11 +1,14 @@
 <?php
-	$serverCon = mysqli_connect("localhost", "root", "");
-	
-	if(!$serverCon)
-		die (mysqli_connect_errno());
+define('Server_Name' , "localhost" );
+define('UserName', "root" );
+define('Password' , "root" );
+define('DataBase_Name' , "web_project" );
 
-	$databaseCon = mysqli_connect("localhost", "root", "", "web_project");
-	
-	if(!$databaseCon)
-		die (mysqli_connect_errno());
+$conn = new mysqli(Server_Name , UserName , Password , DataBase_Name );
+
+// Check connection
+if ($conn -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $conn -> connect_error;
+  exit();
+}
 ?>

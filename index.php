@@ -21,8 +21,8 @@
 				<h3>Find Your PERFECT Home</h3>
 			</header>
 			<div style="width:30%; margin:auto auto;">
-				<a class="button" href="login.html">Login</a> </br>
-				<p>New user? <a href="signup.html">Sign up</a></p>
+				<a class="button" href="login.php">Login</a> </br>
+				<p>New user? <a href="signup.php">Sign up</a></p>
 			</div>
 		</section>
 	</div>

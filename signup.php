@@ -1,6 +1,6 @@
 <?php 
   session_start();?>
- <?php include_once('db.php'); ?>
+ <?php include('db.php'); ?>
 <?php
   if (isset($_SESSION['role'])) {
 
@@ -163,10 +163,10 @@ $_SESSION[ 'role'] = 'hameseeker';
 					<input type="password" class="form-control" id="confirm_password" name="confirm_password" value="" required>
 				</div>
 			</div>
-			<input class="button" id="signup" name="signup" type="submit" value="sign-up" onclick="signup.php">
+			<input class="button" id="signup" name="signup" type="submit" value="sign-up" onclick="Homeseekerpage.php">
 			
 			<div style="width:10%; margin:auto auto;">
-				<a href="login.html" >Login</a> </div>
+				<a href="login.php" >Login</a> </div>
 				<!--****************************************************
 				<?php  
 

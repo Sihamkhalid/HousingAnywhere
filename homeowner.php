@@ -28,7 +28,7 @@
             <img src="images/logo.png" alt="Logo" width= "150px" /> 
         </div>
             <div class="topnav">
-                <a class="active" href="index.html">Log Out</a>
+                <a class="active" href="index.php">Log Out</a>
             </div>
             <?php
        
@@ -84,7 +84,7 @@
             $result = mysqli_query($connection, $sql);
                 
                 while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr > <td><a href='PropertyDetails.php?pid=".$row['p_id']."'>"
+                    echo "<tr > <td><a href='PropertyDetailsPage.php?pid=".$row['p_id']."'>"
                         . $row['name']."</a></td>";
                     echo "<td>".$row['location']."</td>";
                     
@@ -145,7 +145,7 @@
             $list = mysqli_query($connection, $que);
             
              while($listed = mysqli_fetch_assoc($list)){
-                 echo "<td><a href='PropertyDetails.php?pid=".$listed['p_id']."'>".$listed['name']."</a></td>";
+                 echo "<td><a href='PropertyDetailsPage.php?pid=".$listed['p_id']."'>".$listed['name']."</a></td>";
                  
                 $sql = "SELECT * FROM propertycategory WHERE pc_id=".$listed['property_category_id'];
                 $resultt = mysqli_query($connection, $sql);

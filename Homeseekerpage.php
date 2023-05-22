@@ -1,12 +1,14 @@
-<?php
+<?php include('connection.php'); ?>
 
-include('connection.php'); 
-
-if(!isset($_SESSION)) session_start();
+<?php 
+if(!isset($_SESSION))
+    session_start();
 
 if(!isset($_SESSION['id'])) { // user not logged in
     echo "You must login first!";
 }
+
+
 
 $id = $_SESSION['id'];
 $query = "SELECT * FROM `homeseeker` WHERE hs_id= $id"; //needs sessions $id
@@ -16,11 +18,10 @@ $row = mysqli_fetch_array($result);
 $query2 = "SELECT * FROM `property` WHERE p_id NOT IN (
     SELECT property_id FROM `rentalapplication` 
     WHERE application_status_id = 1 
-    OR home_seeker_id = $id
-)"; //needs $id
+    OR home_seeker_id = $id)"; //needs $id
 $result2 = mysqli_query($connection, $query2);
 
-$query3 = "SELECT * FROM `rentalapplication`,`property` WHERE p_id = property_id And home_seeker_id='1'"; //$id
+$query3 = "SELECT * FROM `rentalapplication`,`property` WHERE property.p_id  = property_id And home_seeker_id='1'"; //$id
 $result3 = mysqli_query($connection, $query3);
 $row3 = mysqli_fetch_array($result3);
 
@@ -56,9 +57,9 @@ $result4 = mysqli_query($connection, $query4);
                                 $category = "Villa";
                             else
                                 $category = "Apartment";
-                            $("#dynamicContent").append("<tr><td> <a class='hover-underline' href='propertyDetails.php?id='" + properties[i].p_id  + ">" + properties[i].name +
+                            $("#dynamicContent").append("<tr><td> <a class='hover-underline' href='PropertyDetailsPage.php?id='" + properties[i].p_id  + ">" + properties[i].name +
                                 "</a> </td> <td>" + $category + "</td> <td>" + properties[i].rent_cost + "/month" + "</td> <td>" + properties[i].rooms + "</td> <td>" + properties[i].location +
-                                "</td> <td> <a class='hover-underline' onClick='apply(this)'>Apply</a> </td> </tr>");
+                                "</td> <td> <a class='hover-underline' href='Homeseekerpage.php?id='" + properties[i].p_id +" >Apply</a> </td> </tr>");
                         }
 
                     });
@@ -67,7 +68,7 @@ $result4 = mysqli_query($connection, $query4);
     </script>
     <?php 
     
-if(isset($_GET['id'])){
+    if(isset($_GET['id'])){
     $prop_id = $_GET['id'];
     $seeker_id = $_SESSION['id'];
 
@@ -81,7 +82,8 @@ if(isset($_GET['id'])){
     header("location:Homeseekerpage.php");
     
     exit();
-} ?> 
+   }
+?> 
 
 </head>
 <div class="homeseeker">
@@ -94,7 +96,7 @@ if(isset($_GET['id'])){
                 <img src="images/logo.png" alt="Logo" width="150px" />
             </div>
             <div class="topnav">
-                <a class="active" href="index.html">Log Out</a>
+                <a class="active" href="login.php">Log Out</a>
             </div>
 
         </header>
@@ -133,7 +135,7 @@ if(isset($_GET['id'])){
                     ?>
                         <tr>
                             <td>
-                                <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row3['p_id']; ?>">
+                                <a class="hover-underline" href="PropertyDetailsPage.php?id=<?php echo $row3['p_id']; ?>">
                                     <?php echo $row3["name"]; ?>
                                 </a>
                             </td>
@@ -200,7 +202,7 @@ if(isset($_GET['id'])){
 
                         <tr id="<?php echo $row2['p_id']; ?>">
                             <td>
-                                <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row2['p_id']; ?>">
+                                <a class="hover-underline" href="propertyDetailsPage.php?id=<?php echo $row2['p_id']; ?>">
                                     <?php echo $row2["name"]; ?>
                                 </a>
                             </td>
