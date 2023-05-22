@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "root", "project_database");
+$connection = mysqli_connect("localhost", "root", "root", "web_project");
 if (mysqli_connect_error() != null) {
     echo "<p>Could not connect to the database.</p>";} 
 else {
