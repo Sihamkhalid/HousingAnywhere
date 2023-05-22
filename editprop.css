@@ -1,0 +1,206 @@
+html {
+  background: rgba(169, 169, 181, 0.151) 100%;
+}
+
+
+header {
+  background: linear-gradient(to bottom,
+      rgb(155, 155, 167) 0%,
+      rgba(155, 155, 167, 0.879) 39%,
+      rgba(155, 155, 167, 0.868) 40%,
+      rgba(155, 155, 167, 0.728) 56%,
+      rgba(155, 155, 167, 0.731) 60%,
+
+      rgba(155, 155, 167, 0.452) 80%,
+      rgba(155, 155, 167, 0.432) 81%,
+      rgba(155, 155, 167, 0.237) 90%,
+      rgba(155, 155, 167, 0.199) 91%,
+      rgba(169, 169, 181, 0.178) 95%,
+      rgba(169, 169, 181, 0.121) 98%,
+      rgba(169, 169, 181, 0.048) 100%);
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  margin: auto auto;
+  background: linear-gradient(to bottom, rgba(169, 169, 181, 0.048) 0%, rgba(169, 169, 181, 0.121) 39%, rgba(169, 169, 181, 0.178) 40%, rgba(155, 155, 167, 0.199) 56%, rgba(155, 155, 167, 0.237) 60%, rgba(155, 155, 167, 0.432) 80%, rgba(155, 155, 167, 0.452) 81%, rgba(155, 155, 167, 0.731) 90%, rgba(155, 155, 167, 0.728)91%, rgba(155, 155, 167, 0.868)95%, rgba(155, 155, 167, 0.879)98%, rgb(155, 155, 167) 100%);
+
+}
+
+
+.copyright {
+  position: relative;
+  width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(155, 155, 167, 0.868);
+  line-height: 30px;
+}
+
+.copyright a {
+  color: rgba(155, 155, 167, 0.452);
+}
+
+.copyright a:hover {
+  color: #5773a4;
+}
+
+/*cont*/
+
+.flex-container {
+  display: flex;
+  width: 770px;
+  margin: 5px auto;
+  padding: 3rem 2rem;
+  align-items: flex-start;
+  gap: 3px;
+  border: 0px solid;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.ima .imgHouse {
+  width: 150px;
+}
+
+.flex-container .imo-container {
+  display: flex;
+  padding: 10px;
+  width: auto;
+  height: auto;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  border-radius: 3%;
+}
+
+.flex-container .imo-container .ima {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f7f7f7;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid #ccc;
+  outline-offset: -1.5rem;
+  cursor: pointer;
+  width: 160px;
+  height: 160px;
+  border-radius: 2%;
+}
+
+.flex-container .imo-container .ima:hover {
+  outline: 0.1rem solid #333436;
+  outline-offset: 0;
+  border-radius: 3%;
+}
+
+.flex-container .imo-container .ima img {
+  height: 5rem;
+}
+
+.flex-container .imo-container .ima:hover img {
+  transform: scale(0.9);
+}
+
+.flex-container .imo-container .ima h3 {
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+  color: rgba(89, 119, 130, 0.836);
+  text-align: left;
+  text-shadow: 0.1em 0.1em 0.1em silver;
+}
+
+.flex-container .imo-container .ima:hover h3 {
+  color: rgb(23, 9, 74);
+}
+
+.flex-container .imo-container .textstyle {
+  font-size: 15px;
+  text-align: center;
+}
+
+span {
+  color: rgb(23, 9, 74);
+  font-size: large;
+  text-shadow: 2px 1px 3px #0000004e;
+}
+
+legend {
+  color: rgb(23, 9, 74);
+  font-size: 25px;
+  text-shadow: 2px 1px 3px #0000004e;
+}
+
+.editCon {
+  display: flex;
+  border-style: solid;
+  border-color: rgba(132, 132, 132, 0.9);
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.word {
+  font-size: X-large;
+  color: rgb(23, 9, 74);
+  ;
+}
+
+.logO {
+  float: right;
+  color: #143ba8;
+  text-decoration: none;
+}
+
+h1 {
+  color: rgb(51, 51, 68);
+}
+
+a {
+  color: #143ba8;
+  text-decoration: none;
+}
+
+.topnav {
+  background-color: linear-gradient(to bottom, rgb(155, 155, 167) 0%, rgba(155, 155, 167, 0.879) 39%, rgba(155, 155, 167, 0.868) 40%, rgba(155, 155, 167, 0.728) 56%, rgba(155, 155, 167, 0.731) 60%, rgba(155, 155, 167, 0.452) 80%, rgba(155, 155, 167, 0.432) 81%, rgba(155, 155, 167, 0.237) 90%, rgba(155, 155, 167, 0.199) 91%, rgba(169, 169, 181, 0.178) 95%, rgba(169, 169, 181, 0.121) 98%, rgba(169, 169, 181, 0.048) 100%);
+  overflow: hidden;
+
+}
+
+
+.topnav a {
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 20px;
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: #002244;
+  color: white;
+}
+
+.uplo:hover {
+  color: rgb(183, 28, 146);
+}
+
+.delet:hover {
+  color: rgb(183, 28, 146);
+}
+
+.topnav .heCol a {
+  Color: #002244;
+  ;
+}
