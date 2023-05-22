@@ -1,6 +1,6 @@
 <?php
 define("DBHOST",'localhost');
-define("DBNAME",'project_database');
+define("DBNAME",'web_project');
 define("DBUSER",'root');
 define("DBPASS",'root');
 

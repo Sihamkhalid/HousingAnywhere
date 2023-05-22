@@ -2,14 +2,14 @@
 
 <?php 
 ini_set("display_errors", 1);
-$query = "SELECT * FROM `homeseeker` WHERE id='1'"; //needs sessions $id
+$query = "SELECT * FROM `homeseeker` WHERE hs_id='1'"; //needs sessions $id
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row = mysqli_fetch_array($result);
 
-$query2 = "SELECT * FROM `property` WHERE id NOT IN (SELECT property_id FROM `rentalapplication` WHERE application_status_id=1 OR home_seeker_id=1)";//needs $id
+$query2 = "SELECT * FROM `property` WHERE p_id NOT IN (SELECT property_id FROM `rentalapplication` WHERE application_status_id=1 OR home_seeker_id=1)";//needs $id
 $result2 = mysqli_query($connection, $query2) or die(mysqli_error($connection));
 
-$query3 = "SELECT * FROM `rentalapplication`,`property` WHERE property.id = property_id And home_seeker_id='1'"; //$id
+$query3 = "SELECT * FROM `rentalapplication`,`property` WHERE p_id = property_id And home_seeker_id='1'"; //$id
 $result3 = mysqli_query($connection, $query3) or die(mysqli_error($connection));
 $row3 = mysqli_fetch_array($result3);
 
@@ -43,7 +43,7 @@ $result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
                            $category = "Villa";
                         else
                             $category = "Apartment";
-                        $("#dynamicContent").append("<tr><td> <a class='hover-underline' href='propertyDetails.php?id='" + properties[i].id + ">" + properties[i].name +
+                        $("#dynamicContent").append("<tr><td> <a class='hover-underline' href='propertyDetails.php?id='" + properties[i].p_id + ">" + properties[i].name +
                                 "</a> </td> <td>" + $category + "</td> <td>" + properties[i].rent_cost+"/month" + "</td> <td>" + properties[i].rooms + "</td> <td>" + properties[i].location +
                                 "</td> <td> <a class='hover-underline' onClick='apply(this)'>Apply</a> </td> </tr>" );
                     }
@@ -101,7 +101,7 @@ $result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
                     ?>
                     <tr>
                         <td>
-                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row3['id'];?>"> 
+                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row3['p_id'];?>"> 
                             <?php echo $row3["name"]; ?>  
                             </a>
                         </td>
@@ -136,7 +136,7 @@ $result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
                       <option value="" disabled selected> Search by Category: </option>
                             <?php    
                             while ($row4 = mysqli_fetch_array($result4)) {
-                                echo "<option value=".$row4['id'].">".$row4['category']."</option>";
+                                echo "<option value=".$row4['pc_id'].">".$row4['category']."</option>";
                             }
                             ?>
                     </select>
@@ -160,9 +160,9 @@ $result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
                     while($row2=mysqli_fetch_array($result2)){
                     ?>
                     
-                    <tr id="<?php echo $row2['id'];?>">
+                    <tr id="<?php echo $row2['p_id'];?>">
                         <td>
-                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row2['id'];?>"> 
+                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row2['p_id'];?>"> 
                             <?php echo $row2["name"]; ?>  
                             </a>
                         </td>
@@ -177,7 +177,7 @@ $result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
                         <td> <?php echo $row2["rent_cost"]."/month"; ?> </td>
                         <td> <?php echo $row2["rooms"];?> </td>
                         <td> <?php echo $row2["location"]; ?> </td>
-                        <td><a class="hover-underline" onClick='<?php echo "apply(".$row2['id'].")";?>'>Apply</a></td>
+                        <td><a class="hover-underline" onClick='<?php echo "apply(".$row2['p_id'].")";?>'>Apply</a></td>
                     </tr>
                    
                     <?php } ?>
