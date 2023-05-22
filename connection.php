@@ -1,25 +1,14 @@
+<?php
+define("DBHOST",'localhost');
+define("DBNAME",'project_database');
+define("DBUSER",'root');
+define("DBPASS",'root');
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        $host = "localhost";
-        $database = "project_database";
-        $user = "root";
-        $pass = "root"; 
+$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+$error = mysqli_connect_error();
         
-        $connection = mysqli_connect($host , $user , $pass , $database); 
-        
-        $error = mysqli_connect_error();
-        if ( $error != null) { 
-            $output = "Can not connect to the database" . $error; 
-            die ( mysqli_connect_errno()) ;
-        }
-            
-                
-        ?>
-    </body>
-</html>
+if($error != null) {
+    echo "Error Connection";
+    die (mysqli_connect_errno());
+}
+?>

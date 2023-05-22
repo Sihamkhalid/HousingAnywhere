@@ -1,14 +1,57 @@
-<?php include_once ('connection.php'); ?>
+<?php include('connection.php'); ?>
+
+<?php 
+ini_set("display_errors", 1);
+$query = "SELECT * FROM `homeseeker` WHERE id='1'"; //needs sessions $id
+$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+$row = mysqli_fetch_array($result);
+
+$query2 = "SELECT * FROM `property` WHERE id NOT IN (SELECT property_id FROM `rentalapplication` WHERE application_status_id=1 OR home_seeker_id=1)";//needs $id
+$result2 = mysqli_query($connection, $query2) or die(mysqli_error($connection));
+
+$query3 = "SELECT * FROM `rentalapplication`,`property` WHERE property.id = property_id And home_seeker_id='1'"; //$id
+$result3 = mysqli_query($connection, $query3) or die(mysqli_error($connection));
+$row3 = mysqli_fetch_array($result3);
+
+$query4 = "SELECT * FROM `propertycategory`";
+$result4 = mysqli_query($connection, $query4) or die(mysqli_error($connection));
+?>
+
+
 
 <html lang="en">
-    
+
 <head>
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Any Where | Homeseeker </title>
 	    <link rel="stylesheet" href="(Basic)Style.css">
-        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            
+        <script>
+              
+            $(document).ready( function() { 
+                $("#btn1").click(function(){
+                $.post("searchProperties.php", { c: $("#Catsort").val()},
+                   function(response){
+                    var properties = JSON.parse(response);
+                    var save = $('#dynamicContent #header').detach();
+                    $('#dynamicContent').empty().append(save);
+                    for(i=0; i<properties.length; i++){
+                        if(properties[i].property_category_id==1)
+                           $category = "Villa";
+                        else
+                            $category = "Apartment";
+                        $("#dynamicContent").append("<tr><td> <a class='hover-underline' href='propertyDetails.php?id='" + properties[i].id + ">" + properties[i].name +
+                                "</a> </td> <td>" + $category + "</td> <td>" + properties[i].rent_cost+"/month" + "</td> <td>" + properties[i].rooms + "</td> <td>" + properties[i].location +
+                                "</td> <td> <a class='hover-underline' onClick='apply(this)'>Apply</a> </td> </tr>" );
+                    }
+                    
+                  });
+                });
+            });
+           </script>
 </head>
 <div class="homeseeker">
 <body>
@@ -27,12 +70,13 @@
 
 
             <div id="content">
-                <!-- <span id ="Welcome"> <h1>Welcome  Siham! </span></h1> -->
+                <!-- <span id ="Welcome"> >
            <section style="text-align: center;">
             <h1>Welcome <strong>Siham</strong>! </h1> 
          </section>
 
-               <!-- <pre><span class="em"> Your Name: </span>  Siham Khalid     <span class="em">Phone number: </span> 0550167978    <span class="em">   Email address: </span> siham0099@outlook.com</pre>
+               <!-- <pre><span class="em"> Your Name: </span>  <?php echo $row["first_name"]." ".$row["last_name"]; ?>    <span class="em">Phone number: </span> <?php echo $row["phone_number"]; ?><    <span class="em">   Email address: </span>  <?php echo $row["email_address"]; ?> 
+               <span class="em">   Family members: <?php echo $row["family_members"]; ?> </span></pre>
 			<br> -->
 
             <pre> <img src="images/user.png" alt="user" style="width:20px;height:20px;">  Siham Khalid  <img src="images/phone.png" alt="phone" style="width:20px;height:20px;"> 0550167978  <img src="images/email.png" alt="email" style="width:20px;height:20px;">Siham@gmail.com</pre>
@@ -50,42 +94,56 @@
                         <th>Category</th>
                         <th>Rent</th>
                         <th>Status</th>
-                    </tr>
-                    
+                    		
+                     </tr>
+                    <?php 
+                    while($row3=mysqli_fetch_array($result3)){
+                    ?>
                     <tr>
-                        <td><a href=""> Olaya Plaza </a> </td>
-                        <td>Apartment</td>
-					    <td> 3000/month  </td>	
-				        <td>Under Consideration</td>
-                        <td> <a href=""> withdraw </a></td>
+                        <td>
+                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row3['id'];?>"> 
+                            <?php echo $row3["name"]; ?>  
+                            </a>
+                        </td>
+                        <td>
+                            <?php 
+                            if ($row3["property_category_id"]==1) 
+                                echo "Villa";
+                            else
+                                echo "Apartment"; 
+                            ?>
+                        </td>
+                        <td> <?php echo $row3["rent_cost"]."/month"; ?> </td>
+                        <td> 
+                            <?php 
+                            switch($row3["application_status_id"]){
+                                case 1: echo "Accepted"; break;
+                                case 2: echo "Under consideration"; break;
+                                case 3: echo "Declined"; break;
+                            }
+                            ?> 
+                        </td>
                     </tr>
-                    
-                    <tr>
-                        <td> <a href=""> Al-Nakheel House </a> </td>
-                        <td>Villa</td>
-					    <td>20000/month</td>	
-				        <td>Declined</td>
-                    </tr>
-					
-                    <tr>
-                        <td> <a href=""> Al-Rajhi House </a></td>
-                        <td>Villa</td>
-					    <td>50000/month</td>	
-				        <td> Accepted</td> 
-                    </tr>
+                    <?php } ?>
+                      
+                </table><br>
                 
-                </table> <br>
+
 <br><br >
                 <div class="sort">
                     <br>
-                    Search by Category:
                     <select name="Catsort" id="Catsort">
-                      <option value="Apartment">Apartment</option>
-                      <option value="Villa">Villa</option>
+                      <option value="" disabled selected> Search by Category: </option>
+                            <?php    
+                            while ($row4 = mysqli_fetch_array($result4)) {
+                                echo "<option value=".$row4['id'].">".$row4['category']."</option>";
+                            }
+                            ?>
                     </select>
+                    <button id="btn1"> Search </button> 
                 </div>
 
-                <table>
+                <table id="dynamicContent">
                     <span class="title">
                     <h2> Homes for Rent </h2> 
                     </span>
@@ -98,45 +156,32 @@
                             <th>Location</th>
                         </tr>
                         
-                        <tr>
-                            <td>  <a href="PropertyDetailsPage.html"> Comfy Homes </a> </td>
-                            <td> Villa </td>
-                            <td>150000/month</td>	
-                            <td>6</td>
-                            <td> Riyadh, Al-Malqa District </td>
-                            <td>  <a href=""> Applay </a> </td>
-                        </tr>
-                        
-                        <tr>
-                            <td> <a href=""> Al-Yasmin Apartments </a> </td>
-                            <td> Apartment </td>
-                            <td>35000/month</td>	
-                            <td>3</td>
-                            <td>Ryiadh, Al-Yasmin District </td>
-                            <td>  <a href=""> Applay </a> </td>
-                        </tr>
-                        
-                        <tr>
-                            <td> <a href=""> Luxury House </a> </td>
-                            <td>Villa</td>
-                            <td> 500000/month</td>	
-                            <td>9</td>
-                            <td>Ryiadh, Hittin District </td>
-                            <td>  <a href=""> Applay </a> </td>
-                        </tr>
-  
-                        <tr>
-                            <td> <a href=""> Al-Rabie Apartments </a> </td>
-                            <td>Villa</td>
-                            <td> 30000/month</td>	
-                            <td>5</td>
-                            <td>Ryiadh, Al-Rabie District </td>
-                            <td>  <a href=""> Applay </a> </td>
-                        </tr>
-                        
-            
-                       
-                    </table> 
+                        <?php 
+                    while($row2=mysqli_fetch_array($result2)){
+                    ?>
+                    
+                    <tr id="<?php echo $row2['id'];?>">
+                        <td>
+                            <a class="hover-underline" href="propertyDetails.php?id=<?php echo $row2['id'];?>"> 
+                            <?php echo $row2["name"]; ?>  
+                            </a>
+                        </td>
+                        <td> 
+                            <?php 
+                            if ($row2["property_category_id"]==1) 
+                                echo "Apartment";
+                            else
+                                echo "Villa"; 
+                            ?> 
+                        </td>
+                        <td> <?php echo $row2["rent_cost"]."/month"; ?> </td>
+                        <td> <?php echo $row2["rooms"];?> </td>
+                        <td> <?php echo $row2["location"]; ?> </td>
+                        <td><a class="hover-underline" onClick='<?php echo "apply(".$row2['id'].")";?>'>Apply</a></td>
+                    </tr>
+                   
+                    <?php } ?>
+                </table>
             </div>
 			
 		
